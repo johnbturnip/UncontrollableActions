@@ -36,14 +36,20 @@ namespace UncontrollableActions
         public void NextTurn()
         {
             //Fire the OnTurnEnd event
-            OnTurnEnd(currentTurnIndex, CurrentTurnPlayer);
+            if (OnTurnEnd != null)
+            {
+                OnTurnEnd(currentTurnIndex, CurrentTurnPlayer);
+            }
 
             //Move to the next player's turn
             currentTurnIndex++;
             currentTurnIndex %= playerList.Count;
 
             //Fire the OnTurnStart event
-            OnTurnStart(currentTurnIndex, CurrentTurnPlayer);
+            if (OnTurnStart != null)
+            {
+                OnTurnStart(currentTurnIndex, CurrentTurnPlayer);
+            }
         }
     }
 }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.consolePanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.consoleTextBox = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.nextTurnButton = new System.Windows.Forms.Button();
             this.playerInspectPanel = new System.Windows.Forms.Panel();
-            this.playerListBox = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.selectedPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.selectedPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.playerListBox = new System.Windows.Forms.ListBox();
             this.currentPlayerPanel = new System.Windows.Forms.Panel();
-            this.currentTurnLabel = new System.Windows.Forms.Label();
             this.currentPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
+            this.currentTurnLabel = new System.Windows.Forms.Label();
             this.availableActionsPanel = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.consolePanel.SuspendLayout();
@@ -58,15 +58,6 @@
             this.consolePanel.Size = new System.Drawing.Size(330, 248);
             this.consolePanel.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Console";
-            // 
             // consoleTextBox
             // 
             this.consoleTextBox.Enabled = false;
@@ -76,6 +67,15 @@
             this.consoleTextBox.TabIndex = 1;
             this.consoleTextBox.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Console";
+            // 
             // nextTurnButton
             // 
             this.nextTurnButton.Location = new System.Drawing.Point(3, 20);
@@ -84,6 +84,7 @@
             this.nextTurnButton.TabIndex = 1;
             this.nextTurnButton.Text = "End Turn";
             this.nextTurnButton.UseVisualStyleBackColor = true;
+            this.nextTurnButton.Click += new System.EventHandler(this.nextTurnButton_Click);
             // 
             // playerInspectPanel
             // 
@@ -97,24 +98,14 @@
             this.playerInspectPanel.Size = new System.Drawing.Size(330, 250);
             this.playerInspectPanel.TabIndex = 2;
             // 
-            // playerListBox
+            // label3
             // 
-            this.playerListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.playerListBox.FormattingEnabled = true;
-            this.playerListBox.Location = new System.Drawing.Point(7, 18);
-            this.playerListBox.Name = "playerListBox";
-            this.playerListBox.Size = new System.Drawing.Size(78, 225);
-            this.playerListBox.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Players";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(91, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Description";
             // 
             // selectedPlayerDescTextbox
             // 
@@ -127,14 +118,24 @@
             this.selectedPlayerDescTextbox.TabIndex = 2;
             this.selectedPlayerDescTextbox.Text = "";
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Description";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Players";
+            // 
+            // playerListBox
+            // 
+            this.playerListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.playerListBox.FormattingEnabled = true;
+            this.playerListBox.Location = new System.Drawing.Point(7, 18);
+            this.playerListBox.Name = "playerListBox";
+            this.playerListBox.Size = new System.Drawing.Size(78, 225);
+            this.playerListBox.TabIndex = 0;
             // 
             // currentPlayerPanel
             // 
@@ -147,15 +148,6 @@
             this.currentPlayerPanel.Size = new System.Drawing.Size(689, 250);
             this.currentPlayerPanel.TabIndex = 3;
             // 
-            // currentTurnLabel
-            // 
-            this.currentTurnLabel.AutoSize = true;
-            this.currentTurnLabel.Location = new System.Drawing.Point(4, 4);
-            this.currentTurnLabel.Name = "currentTurnLabel";
-            this.currentTurnLabel.Size = new System.Drawing.Size(135, 13);
-            this.currentTurnLabel.TabIndex = 0;
-            this.currentTurnLabel.Text = "It is currently nobody\'s turn.";
-            // 
             // currentPlayerDescTextbox
             // 
             this.currentPlayerDescTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -166,6 +158,15 @@
             this.currentPlayerDescTextbox.Size = new System.Drawing.Size(218, 223);
             this.currentPlayerDescTextbox.TabIndex = 1;
             this.currentPlayerDescTextbox.Text = "";
+            // 
+            // currentTurnLabel
+            // 
+            this.currentTurnLabel.AutoSize = true;
+            this.currentTurnLabel.Location = new System.Drawing.Point(4, 4);
+            this.currentTurnLabel.Name = "currentTurnLabel";
+            this.currentTurnLabel.Size = new System.Drawing.Size(135, 13);
+            this.currentTurnLabel.TabIndex = 0;
+            this.currentTurnLabel.Text = "It is currently nobody\'s turn.";
             // 
             // availableActionsPanel
             // 
