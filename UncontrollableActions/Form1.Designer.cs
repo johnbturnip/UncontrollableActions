@@ -37,8 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.selectedPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.currentPlayerPanel = new System.Windows.Forms.Panel();
+            this.currentTurnLabel = new System.Windows.Forms.Label();
+            this.currentPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
             this.consolePanel.SuspendLayout();
             this.playerInspectPanel.SuspendLayout();
+            this.currentPlayerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // consolePanel
@@ -72,7 +76,7 @@
             // nextTurnButton
             // 
             this.nextTurnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nextTurnButton.Location = new System.Drawing.Point(13, 608);
+            this.nextTurnButton.Location = new System.Drawing.Point(13, 269);
             this.nextTurnButton.Name = "nextTurnButton";
             this.nextTurnButton.Size = new System.Drawing.Size(120, 42);
             this.nextTurnButton.TabIndex = 1;
@@ -130,11 +134,43 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Description";
             // 
+            // currentPlayerPanel
+            // 
+            this.currentPlayerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentPlayerPanel.Controls.Add(this.currentPlayerDescTextbox);
+            this.currentPlayerPanel.Controls.Add(this.currentTurnLabel);
+            this.currentPlayerPanel.Location = new System.Drawing.Point(13, 13);
+            this.currentPlayerPanel.Name = "currentPlayerPanel";
+            this.currentPlayerPanel.Size = new System.Drawing.Size(689, 250);
+            this.currentPlayerPanel.TabIndex = 3;
+            // 
+            // currentTurnLabel
+            // 
+            this.currentTurnLabel.AutoSize = true;
+            this.currentTurnLabel.Location = new System.Drawing.Point(4, 4);
+            this.currentTurnLabel.Name = "currentTurnLabel";
+            this.currentTurnLabel.Size = new System.Drawing.Size(135, 13);
+            this.currentTurnLabel.TabIndex = 0;
+            this.currentTurnLabel.Text = "It is currently nobody\'s turn.";
+            // 
+            // currentPlayerDescTextbox
+            // 
+            this.currentPlayerDescTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.currentPlayerDescTextbox.Enabled = false;
+            this.currentPlayerDescTextbox.Location = new System.Drawing.Point(7, 20);
+            this.currentPlayerDescTextbox.Name = "currentPlayerDescTextbox";
+            this.currentPlayerDescTextbox.Size = new System.Drawing.Size(218, 223);
+            this.currentPlayerDescTextbox.TabIndex = 1;
+            this.currentPlayerDescTextbox.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 662);
+            this.Controls.Add(this.currentPlayerPanel);
             this.Controls.Add(this.playerInspectPanel);
             this.Controls.Add(this.nextTurnButton);
             this.Controls.Add(this.consolePanel);
@@ -145,6 +181,8 @@
             this.consolePanel.PerformLayout();
             this.playerInspectPanel.ResumeLayout(false);
             this.playerInspectPanel.PerformLayout();
+            this.currentPlayerPanel.ResumeLayout(false);
+            this.currentPlayerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -160,6 +198,9 @@
         private System.Windows.Forms.ListBox playerListBox;
         private System.Windows.Forms.RichTextBox selectedPlayerDescTextbox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel currentPlayerPanel;
+        private System.Windows.Forms.RichTextBox currentPlayerDescTextbox;
+        private System.Windows.Forms.Label currentTurnLabel;
     }
 }
 
