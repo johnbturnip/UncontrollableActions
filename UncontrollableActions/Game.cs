@@ -14,6 +14,7 @@ namespace UncontrollableActions
         
         public int PlayerCount { get { return playerList.Count; } }
 
+
         //Events
         public delegate void ParameterlessEvent();
         public delegate void TurnEvent(int playerIndex, Actor turnPlayer);
@@ -23,6 +24,7 @@ namespace UncontrollableActions
         public event TurnEvent OnTurnEnd;
         public event TurnEvent OnTurnStart;
 
+
         //Private fields
         private bool started = false;
 
@@ -31,7 +33,6 @@ namespace UncontrollableActions
 
 
         //Interface methods
-
         public Actor GetPlayer(int i)
         {
             //Returns the ith player, starting at 0.
