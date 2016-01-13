@@ -27,6 +27,10 @@ namespace UncontrollableActions
             //Subscribe to game events.
             game.OnGameStart += OnGameStart;
             game.OnTurnStart += OnTurnStart;
+            game.OnTurnEnd += OnTurnEnd;
+
+            //Subscribe to Actor events
+            Actor.OnArousalChanged += OnArousalChanged;
 
             //Create the actors in the game.
             new Actor("Rosalina", game);
@@ -49,6 +53,24 @@ namespace UncontrollableActions
         {
             //Change the label.
             currentTurnLabel.Text = "It is currently " + turnPlayer.Name + "'s turn.";
+        }
+
+        private void OnTurnEnd(int currentTurnIndex, Actor turnPlayer)
+        {
+            //Increase the current turn player's arousal by 1.
+            turnPlayer.Arousal += 1;
+        }
+
+        private void OnArousalChanged(Actor actor, double oldVal, double newVal)
+        {
+            //Print this to the console.
+            consoleTextBox.Text += "" + actor.Name + "'s arousal went from " + oldVal + " to " + newVal + "\n";
+        }
+
+        private void OnStimulusChanged(Actor actor, double oldVal, double newVal)
+        {
+            //Print this to the console.
+            consoleTextBox.Text += "" + actor.Name + "'s stimulus went from " + oldVal + " to " + newVal + "\n";
         }
 
         private void nextTurnButton_Click(object sender, EventArgs e)
