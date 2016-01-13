@@ -15,8 +15,9 @@ namespace UncontrollableActions
         public int PlayerCount { get { return playerList.Count; } }
 
 
-        //Events
+        //Event Declarations
         public delegate void ParameterlessEvent();
+        public delegate void ConsolePrintEvent(string text);
         public delegate void TurnEvent(int playerIndex, Actor turnPlayer);
 
         public event ParameterlessEvent OnGameStart;
@@ -24,12 +25,23 @@ namespace UncontrollableActions
         public event TurnEvent OnTurnEnd;
         public event TurnEvent OnTurnStart;
 
+        public event ConsolePrintEvent OnConsolePrint;
+
 
         //Private fields
         private bool started = false;
 
         private List<Actor> playerList = new List<Actor>();
         private int currentTurnIndex = 0;
+
+
+        //Constructors
+        public Game()
+        {
+            //Subscribe to Actor events
+            Actor.OnArousalChanged += OnArousalChanged;
+            Actor.OnStimulusChanged += OnStimulusChanged;
+        }
 
 
         //Interface methods
@@ -45,6 +57,23 @@ namespace UncontrollableActions
             {
                 playerList.Add(actor);
             }
+        }
+
+        public void Print(string text)
+        {
+            //Prints text to the console.
+
+            //Send the event.
+            if (OnConsolePrint != null)
+            {
+                OnConsolePrint(text);
+            }
+        }
+
+        public void PrintLn(string text)
+        {
+            //Prints a line to the console.
+            Print(text + "\n");
         }
 
         public void StartGame()
@@ -89,6 +118,18 @@ namespace UncontrollableActions
             {
                 OnTurnStart(currentTurnIndex, CurrentTurnPlayer);
             }
+        }
+
+
+        //Events
+        private void OnArousalChanged(Actor actor, double oldVal, double newVal)
+        {
+            PrintLn("" + actor.Name + "'s arousal went from " + oldVal + " to " + newVal);
+        }
+
+        private void OnStimulusChanged(Actor actor, double oldVal, double newVal)
+        {
+            PrintLn("" + actor.Name + "'s stimulus went from " + oldVal + " to " + newVal);
         }
     }
 }
