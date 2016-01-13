@@ -31,6 +31,8 @@ namespace UncontrollableActions
             new Actor("Rosalina", game);
             new Actor("Peach", game);
             new Actor("Samus", game);
+
+            game.StartGame();
         }
 
         private void OnTurnStart(int currentTurnIndex, Actor turnPlayer)

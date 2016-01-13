@@ -13,12 +13,17 @@ namespace UncontrollableActions
         public int CurrentTurnIndex { get { return currentTurnIndex; } }
 
         //Events
+        public delegate void ParameterlessEvent();
         public delegate void TurnEvent(int playerIndex, Actor turnPlayer);
+
+        public event ParameterlessEvent OnGameStart;
 
         public event TurnEvent OnTurnEnd;
         public event TurnEvent OnTurnStart;
 
         //Private fields
+        private bool started = false;
+
         private List<Actor> playerList = new List<Actor>();
         private int currentTurnIndex = 0;
 
@@ -33,8 +38,27 @@ namespace UncontrollableActions
             }
         }
 
+        public void StartGame()
+        {
+            //Starts the game.
+            started = true;
+            currentTurnIndex = 0;
+
+            //Send the OnGameStart event
+            if (OnGameStart != null)
+            {
+                OnGameStart();
+            }
+        }
+
         public void NextTurn()
         {
+            //Abort if the game isn't started.
+            if (!started)
+            {
+                return;
+            }
+
             //Fire the OnTurnEnd event
             if (OnTurnEnd != null)
             {
