@@ -32,7 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.consoleTextBox = new System.Windows.Forms.RichTextBox();
             this.nextTurnButton = new System.Windows.Forms.Button();
+            this.playerInspectPanel = new System.Windows.Forms.Panel();
+            this.playerListBox = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.selectedPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
             this.consolePanel.SuspendLayout();
+            this.playerInspectPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // consolePanel
@@ -73,17 +78,60 @@
             this.nextTurnButton.Text = "End Turn";
             this.nextTurnButton.UseVisualStyleBackColor = true;
             // 
+            // playerInspectPanel
+            // 
+            this.playerInspectPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.playerInspectPanel.Controls.Add(this.selectedPlayerDescTextbox);
+            this.playerInspectPanel.Controls.Add(this.label2);
+            this.playerInspectPanel.Controls.Add(this.playerListBox);
+            this.playerInspectPanel.Location = new System.Drawing.Point(567, 13);
+            this.playerInspectPanel.Name = "playerInspectPanel";
+            this.playerInspectPanel.Size = new System.Drawing.Size(471, 337);
+            this.playerInspectPanel.TabIndex = 2;
+            // 
+            // playerListBox
+            // 
+            this.playerListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.playerListBox.FormattingEnabled = true;
+            this.playerListBox.Location = new System.Drawing.Point(3, 18);
+            this.playerListBox.Name = "playerListBox";
+            this.playerListBox.Size = new System.Drawing.Size(223, 316);
+            this.playerListBox.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Players";
+            // 
+            // selectedPlayerDescTextbox
+            // 
+            this.selectedPlayerDescTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.selectedPlayerDescTextbox.Enabled = false;
+            this.selectedPlayerDescTextbox.Location = new System.Drawing.Point(232, 18);
+            this.selectedPlayerDescTextbox.Name = "selectedPlayerDescTextbox";
+            this.selectedPlayerDescTextbox.Size = new System.Drawing.Size(236, 316);
+            this.selectedPlayerDescTextbox.TabIndex = 2;
+            this.selectedPlayerDescTextbox.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 662);
+            this.Controls.Add(this.playerInspectPanel);
             this.Controls.Add(this.nextTurnButton);
             this.Controls.Add(this.consolePanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.consolePanel.ResumeLayout(false);
             this.consolePanel.PerformLayout();
+            this.playerInspectPanel.ResumeLayout(false);
+            this.playerInspectPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -94,6 +142,10 @@
         private System.Windows.Forms.RichTextBox consoleTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button nextTurnButton;
+        private System.Windows.Forms.Panel playerInspectPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox playerListBox;
+        private System.Windows.Forms.RichTextBox selectedPlayerDescTextbox;
     }
 }
 
