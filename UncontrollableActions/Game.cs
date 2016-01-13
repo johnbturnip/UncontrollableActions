@@ -25,6 +25,14 @@ namespace UncontrollableActions
 
         //Interface methods
 
+        public void AddPlayer(Actor actor)
+        {
+            if (!playerList.Contains(actor))
+            {
+                playerList.Add(actor);
+            }
+        }
+
         public void NextTurn()
         {
             //Fire the OnTurnEnd event
