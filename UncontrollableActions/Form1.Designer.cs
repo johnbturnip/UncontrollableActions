@@ -36,6 +36,7 @@
             this.playerListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.selectedPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.consolePanel.SuspendLayout();
             this.playerInspectPanel.SuspendLayout();
             this.SuspendLayout();
@@ -80,23 +81,24 @@
             // 
             // playerInspectPanel
             // 
-            this.playerInspectPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.playerInspectPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.playerInspectPanel.Controls.Add(this.label3);
             this.playerInspectPanel.Controls.Add(this.selectedPlayerDescTextbox);
             this.playerInspectPanel.Controls.Add(this.label2);
             this.playerInspectPanel.Controls.Add(this.playerListBox);
-            this.playerInspectPanel.Location = new System.Drawing.Point(567, 13);
+            this.playerInspectPanel.Location = new System.Drawing.Point(708, 13);
             this.playerInspectPanel.Name = "playerInspectPanel";
-            this.playerInspectPanel.Size = new System.Drawing.Size(471, 337);
+            this.playerInspectPanel.Size = new System.Drawing.Size(330, 250);
             this.playerInspectPanel.TabIndex = 2;
             // 
             // playerListBox
             // 
-            this.playerListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.playerListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.playerListBox.FormattingEnabled = true;
-            this.playerListBox.Location = new System.Drawing.Point(3, 18);
+            this.playerListBox.Location = new System.Drawing.Point(7, 18);
             this.playerListBox.Name = "playerListBox";
-            this.playerListBox.Size = new System.Drawing.Size(223, 316);
+            this.playerListBox.Size = new System.Drawing.Size(78, 225);
             this.playerListBox.TabIndex = 0;
             // 
             // label2
@@ -110,13 +112,23 @@
             // 
             // selectedPlayerDescTextbox
             // 
-            this.selectedPlayerDescTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.selectedPlayerDescTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.selectedPlayerDescTextbox.Enabled = false;
-            this.selectedPlayerDescTextbox.Location = new System.Drawing.Point(232, 18);
+            this.selectedPlayerDescTextbox.Location = new System.Drawing.Point(91, 18);
             this.selectedPlayerDescTextbox.Name = "selectedPlayerDescTextbox";
-            this.selectedPlayerDescTextbox.Size = new System.Drawing.Size(236, 316);
+            this.selectedPlayerDescTextbox.Size = new System.Drawing.Size(236, 225);
             this.selectedPlayerDescTextbox.TabIndex = 2;
             this.selectedPlayerDescTextbox.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(91, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Description";
             // 
             // Form1
             // 
@@ -128,6 +140,7 @@
             this.Controls.Add(this.consolePanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.consolePanel.ResumeLayout(false);
             this.consolePanel.PerformLayout();
             this.playerInspectPanel.ResumeLayout(false);
@@ -146,6 +159,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox playerListBox;
         private System.Windows.Forms.RichTextBox selectedPlayerDescTextbox;
+        private System.Windows.Forms.Label label3;
     }
 }
 
