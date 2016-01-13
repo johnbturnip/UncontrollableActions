@@ -40,9 +40,12 @@
             this.currentPlayerPanel = new System.Windows.Forms.Panel();
             this.currentTurnLabel = new System.Windows.Forms.Label();
             this.currentPlayerDescTextbox = new System.Windows.Forms.RichTextBox();
+            this.availableActionsPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.consolePanel.SuspendLayout();
             this.playerInspectPanel.SuspendLayout();
             this.currentPlayerPanel.SuspendLayout();
+            this.availableActionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // consolePanel
@@ -75,8 +78,7 @@
             // 
             // nextTurnButton
             // 
-            this.nextTurnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nextTurnButton.Location = new System.Drawing.Point(13, 269);
+            this.nextTurnButton.Location = new System.Drawing.Point(3, 20);
             this.nextTurnButton.Name = "nextTurnButton";
             this.nextTurnButton.Size = new System.Drawing.Size(120, 42);
             this.nextTurnButton.TabIndex = 1;
@@ -165,14 +167,34 @@
             this.currentPlayerDescTextbox.TabIndex = 1;
             this.currentPlayerDescTextbox.Text = "";
             // 
+            // availableActionsPanel
+            // 
+            this.availableActionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.availableActionsPanel.Controls.Add(this.label4);
+            this.availableActionsPanel.Controls.Add(this.nextTurnButton);
+            this.availableActionsPanel.Location = new System.Drawing.Point(13, 372);
+            this.availableActionsPanel.Name = "availableActionsPanel";
+            this.availableActionsPanel.Size = new System.Drawing.Size(689, 278);
+            this.availableActionsPanel.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Available Actions";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 662);
+            this.Controls.Add(this.availableActionsPanel);
             this.Controls.Add(this.currentPlayerPanel);
             this.Controls.Add(this.playerInspectPanel);
-            this.Controls.Add(this.nextTurnButton);
             this.Controls.Add(this.consolePanel);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -183,6 +205,8 @@
             this.playerInspectPanel.PerformLayout();
             this.currentPlayerPanel.ResumeLayout(false);
             this.currentPlayerPanel.PerformLayout();
+            this.availableActionsPanel.ResumeLayout(false);
+            this.availableActionsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +225,8 @@
         private System.Windows.Forms.Panel currentPlayerPanel;
         private System.Windows.Forms.RichTextBox currentPlayerDescTextbox;
         private System.Windows.Forms.Label currentTurnLabel;
+        private System.Windows.Forms.Panel availableActionsPanel;
+        private System.Windows.Forms.Label label4;
     }
 }
 
