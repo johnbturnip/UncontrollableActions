@@ -11,6 +11,8 @@ namespace UncontrollableActions
         //Public properties
         public Actor CurrentTurnPlayer { get { return playerList[currentTurnIndex]; } }
         public int CurrentTurnIndex { get { return currentTurnIndex; } }
+        
+        public int PlayerCount { get { return playerList.Count; } }
 
         //Events
         public delegate void ParameterlessEvent();
@@ -30,6 +32,12 @@ namespace UncontrollableActions
 
         //Interface methods
 
+        public Actor GetPlayer(int i)
+        {
+            //Returns the ith player, starting at 0.
+            return playerList[i];
+        }
+        
         public void AddPlayer(Actor actor)
         {
             if (!playerList.Contains(actor))

@@ -38,7 +38,11 @@ namespace UncontrollableActions
 
         private void OnGameStart()
         {
-
+            //Add all of the players to the listbox
+            for (int i = 0; i < game.PlayerCount; i++)
+            {
+                playerListBox.Items.Add(game.GetPlayer(i).Name);
+            }
         }
 
         private void OnTurnStart(int currentTurnIndex, Actor turnPlayer)
