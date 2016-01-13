@@ -25,6 +25,7 @@ namespace UncontrollableActions
         private void Form1_Load(object sender, EventArgs e)
         {
             //Subscribe to game events.
+            game.OnGameStart += OnGameStart;
             game.OnTurnStart += OnTurnStart;
 
             //Create the actors in the game.
@@ -33,6 +34,11 @@ namespace UncontrollableActions
             new Actor("Samus", game);
 
             game.StartGame();
+        }
+
+        private void OnGameStart()
+        {
+
         }
 
         private void OnTurnStart(int currentTurnIndex, Actor turnPlayer)

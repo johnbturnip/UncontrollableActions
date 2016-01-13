@@ -49,6 +49,12 @@ namespace UncontrollableActions
             {
                 OnGameStart();
             }
+
+            //Send the OnTurnStart event
+            if (OnTurnStart != null)
+            {
+                OnTurnStart(currentTurnIndex, CurrentTurnPlayer);
+            }
         }
 
         public void NextTurn()
