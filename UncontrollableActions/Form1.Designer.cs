@@ -31,6 +31,7 @@
             this.consolePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.consoleTextBox = new System.Windows.Forms.RichTextBox();
+            this.nextTurnButton = new System.Windows.Forms.Button();
             this.consolePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             this.consoleTextBox.TabIndex = 1;
             this.consoleTextBox.Text = "";
             // 
+            // nextTurnButton
+            // 
+            this.nextTurnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nextTurnButton.Location = new System.Drawing.Point(13, 608);
+            this.nextTurnButton.Name = "nextTurnButton";
+            this.nextTurnButton.Size = new System.Drawing.Size(120, 42);
+            this.nextTurnButton.TabIndex = 1;
+            this.nextTurnButton.Text = "End Turn";
+            this.nextTurnButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 662);
+            this.Controls.Add(this.nextTurnButton);
             this.Controls.Add(this.consolePanel);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -81,6 +93,7 @@
         private System.Windows.Forms.Panel consolePanel;
         private System.Windows.Forms.RichTextBox consoleTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button nextTurnButton;
     }
 }
 
